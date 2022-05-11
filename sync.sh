@@ -1,21 +1,5 @@
 #!/bin/bash
 
-# Host setup:
-# 1. Install and enable nginx:
-# dnf -y install @nginx
-# systemctl enable --now nginx
-# 2. (optional) Configure firewall:
-# firewall-cmd --add-service=http --permanent
-# firewall-cmd --reload
-# 3. Allow nginx to access NFS shares:
-# setsebool -P httpd_use_nfs 1
-# alternatively:
-# semanage fcontext -a -t httpd_sys_content_t "/data/repos(/.*)?"
-# restorecon -Rv /data/repos
-# 4. Configure hosting:
-# cp mirror.conf /etc/nginx/conf.d/
-# systemctl enable --now nginx
-
 SCRIPTPATH="$( cd "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 base_dir="/srv/mirror"
